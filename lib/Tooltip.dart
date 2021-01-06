@@ -10,6 +10,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _State extends State<MyApp> {
+  String _value = "Nothing yet";
+
+  void onClick() => setState(() => _value = new DateTime.now().toString());
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -25,14 +29,11 @@ class _State extends State<MyApp> {
         child: new Center(
           child: new Column(
             children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: Image.asset("images/flutter-logo.png"),
-              ),
-              Expanded(
-                flex: 1,
-                child: Image.network(
-                    "https://flutter.dev/assets/flutter-lockup-1caf6476beed76adec3c477586da54de6b552b2f42108ec5bc68dc63bae2df75.png"),
+              Text(_value),
+              IconButton(
+                icon: Icon(Icons.timer),
+                onPressed: onClick,
+                tooltip: 'Click me',
               )
             ],
           ),
