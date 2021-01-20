@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/ClockWidget.dart';
+import 'mywidget.dart';
 
 void main() => runApp(new MaterialApp(
       home: new MyApp(),
@@ -24,7 +26,7 @@ class _State extends State<MyApp> {
         padding: new EdgeInsets.all(32.0),
         child: new Center(
           child: new Column(
-            children: <Widget>[],
+            children: <Widget>[MyWidget(), ClockWidget()],
           ),
         ),
       ),
