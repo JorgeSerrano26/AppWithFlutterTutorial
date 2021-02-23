@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/code/GlobalState.dart';
 
 class Second extends StatefulWidget {
   @override
@@ -6,6 +7,9 @@ class Second extends StatefulWidget {
 }
 
 class _SecondState extends State<Second> {
+  
+  GlobalState _state = GlobalState.instance;
+  
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -21,7 +25,7 @@ class _SecondState extends State<Second> {
         child: new Center(
           child: new Column(
             children: <Widget>[
-              Text("Second"),
+              Text("Hello ${_state.get('name')}"),
               RaisedButton(
                 onPressed: () {
                   Navigator.of(context).pop();
